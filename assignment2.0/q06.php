@@ -8,7 +8,7 @@ include "top.php";
 
 //now print out each record
 print '<table>';
-    $columns = 2;
+    $columns = 1;
     $query = 'SELECT fldCourseName '
             . 'FROM tblCourses '
             . 'WHERE fldCourseName LIKE "%data%" AND fldDepartment NOT IN ("CS")';
@@ -29,8 +29,10 @@ print '<table>';
     //
     // function returns "" if it is not correct
     $testquery = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
-    $info2 = $thisDatabaseReader->select($query, "", 1, 1, 2, 0, false, false);
+    $info2 = $thisDatabaseReader->select($query, "", 1, 2, 4, 0, false, false);
 
+    print ' ' . count($info2) . ' records';
+    
     $highlight = 0; // used to highlight alternate rows
     foreach ($info2 as $rec) {
         $highlight++;

@@ -11,7 +11,7 @@ print '<table>';
     $columns = 2;
     $query = 'SELECT fldLastName, fldFirstName '
             . ' FROM tblTeachers '
-            . 'WHERE pmkNetId LIKE "r%_" AND pmkNetId LIKE "%o"';
+            . 'WHERE pmkNetId LIKE "r%" AND pmkNetId LIKE "%o"';
     //public function testquery($query, $values = "", $wheres = 0, $conditions = 0, $quotes = 0, $symbols = 0, $spacesAllowed = false, $semiColonAllowed = false)
     // 
     // $query should be in the form:
@@ -29,8 +29,10 @@ print '<table>';
     //
     // function returns "" if it is not correct
     $testquery = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
-    $info2 = $thisDatabaseReader->select($query, "", 1, 1, 2, 0, false, false);
+    $info2 = $thisDatabaseReader->select($query, "", 1, 1, 4, 0, false, false);
 
+    print ' ' . count($info2) . ' records';
+    
     $highlight = 0; // used to highlight alternate rows
     foreach ($info2 as $rec) {
         $highlight++;
@@ -43,6 +45,7 @@ print '<table>';
         for ($i = 0; $i < $columns; $i++) {
             print '<td>' . $rec[$i] . '</td>';
         }
+        
         print '</tr>';
     }
 

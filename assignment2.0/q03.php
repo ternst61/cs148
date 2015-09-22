@@ -26,9 +26,11 @@ print '<table>';
     // all of the above can be inside the wuery any place.
     //
     // function returns "" if it is not correct
-    $testquery = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
-    $info2 = $thisDatabaseReader->select($query, "", 1, 1, 2, 0, false, false);
+    //$testquery = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
+    $info2 = $thisDatabaseReader->select($query, "", 1, 1, 4, 0, false, false);
 
+    print ' ' . count($info2) . ' records';
+    
     $highlight = 0; // used to highlight alternate rows
     foreach ($info2 as $rec) {
         $highlight++;

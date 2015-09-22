@@ -23,7 +23,21 @@
         <ol>
             <li><a href="tryme.php">tryme</a></li>
             <li><a href="assignment1.0/index.php">assignment1.0</a></li>
-            <li><a href="assignment2.0/index.php">assignment2.0</a></li>
+            <li><a href="assignment2.0/select.php">assignment2.0</a></li>
+                <ol>
+                    <li><a href="assignment2.0/q01.php">query1</a></li>
+                    <li><a href="assignment2.0/q02.php">query2</a></li>
+                    <li><a href="assignment2.0/q03.php">query3</a></li>
+                    <li><a href="assignment2.0/q04.php">query4</a></li>
+                    <li><a href="assignment2.0/q05.php">query5</a></li>
+                    <li><a href="assignment2.0/q06.php">query6</a></li>
+                    <li><a href="assignment2.0/q07.php">query7</a></li>
+                    <li><a href="assignment2.0/q08.php">query8</a></li>
+                    <li><a href="assignment2.0/q09.php">query9</a></li>
+                    <li><a href="assignment2.0/q10.php">query10</a></li>
+                </ol>
+        </ol>
+            
 
 
 
