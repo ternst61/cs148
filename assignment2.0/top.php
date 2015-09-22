@@ -130,5 +130,5 @@ require_once('lib/custom-functions.php');
     <?php
     print '<body id="' . $path_parts['filename'] . '">';
     include "header.php";
-    include "nav.php";
+    //include "nav.php";
     ?>
