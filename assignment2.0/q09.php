@@ -7,7 +7,6 @@
 include "top.php";
 
 //now print out each record
-print '<table>';
     $columns = 2;
     $query = 'SELECT DISTINCT fldBuilding, COUNT(DISTINCT fldNumStudents) FROM tblSections WHERE fldDays LIKE "%W%" GROUP BY fldBuilding ORDER BY fldNumStudents DESC';
     //public function testquery($query, $values = "", $wheres = 0, $conditions = 0, $quotes = 0, $symbols = 0, $spacesAllowed = false, $semiColonAllowed = false)
@@ -30,7 +29,8 @@ print '<table>';
     $info2 = $thisDatabaseReader->select($query, "", 1, 1, 2, 0, false, false);
 
     print ' ' . count($info2) . ' records';
-    
+    print '<table>';
+
     $highlight = 0; // used to highlight alternate rows
     foreach ($info2 as $rec) {
         $highlight++;

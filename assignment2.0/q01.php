@@ -7,14 +7,15 @@
 include "top.php";
 
 //now print out each record
-print '<table>';
     $columns = 1;
     $query = 'SELECT pmkNetId FROM tblTeachers';
     //$testquery = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
     $info2 = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
     
     print ' ' . count($info2) . ' records';
-   
+    
+   print '<table>';
+
     $highlight = 0; // used to highlight alternate rows
     foreach ($info2 as $rec) {
         $highlight++;

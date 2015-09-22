@@ -19,7 +19,7 @@
 
     <body>
 
-
+        <h2>Thomas H Ernst - CS 148 Assignment 2.0</h2>
         <ol>
             <li><a href="q01.php">query1:</a> SELECT pmkNetId FROM tblTeachers</li>
             <li><a href="q02.php">query2:</a> SELECT fldDepartment FROM tblCourses WHERE fldCourseName LIKE "Introduction</li>
@@ -31,4 +31,4 @@
             <li><a href="q08.php">query8:</a> SELECT DISTINCT fldBuilding, COUNT(fldSection) FROM tblSections GROUP BY fldBuilding</li>
             <li><a href="q09.php">query9:</a> SELECT DISTINCT fldBuilding, COUNT(DISTINCT fldNumStudents) FROM tblSections WHERE fldDays LIKE "%W%" GROUP BY fldBuilding ORDER BY fldNumStudents DESC</li>
             <li><a href="q10.php">query10:</a> SELECT DISTINCT fldBuilding, COUNT(DISTINCT fldNumStudents) FROM tblSections WHERE fldDays LIKE "%F%" GROUP BY fldBuilding ORDER BY fldNumStudents DESC</li>
-           
+        </ol>

@@ -7,7 +7,6 @@
 include "top.php";
 
 //now print out each record
-print '<table>';
     $columns = 12;
     $query = 'SELECT * FROM tblSections WHERE fnkCourseId = "392" AND fldSection = "A"';
     //public function testquery($query, $values = "", $wheres = 0, $conditions = 0, $quotes = 0, $symbols = 0, $spacesAllowed = false, $semiColonAllowed = false)
@@ -30,7 +29,8 @@ print '<table>';
     $info2 = $thisDatabaseReader->select($query, "", 1, 1, 4, 0, false, false);
 
     print ' ' . count($info2) . ' records';
-    
+    print '<table>';
+
     $highlight = 0; // used to highlight alternate rows
     foreach ($info2 as $rec) {
         $highlight++;

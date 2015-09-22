@@ -7,7 +7,6 @@
 include "top.php";
 
 //now print out each record
-print '<table>';
     $columns = 1;
     $query = 'SELECT fldCourseName '
             . 'FROM tblCourses '
@@ -32,7 +31,8 @@ print '<table>';
     $info2 = $thisDatabaseReader->select($query, "", 1, 2, 4, 0, false, false);
 
     print ' ' . count($info2) . ' records';
-    
+    print '<table>';
+
     $highlight = 0; // used to highlight alternate rows
     foreach ($info2 as $rec) {
         $highlight++;
