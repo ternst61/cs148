@@ -29,6 +29,6 @@
             <li><a href="q06.php">query6:</a> SELECT fldCourseName FROM tblCourses WHERE fldCourseName LIKE "%data%" AND fldDepartment NOT IN ("CS")</li>
             <li><a href="q07.php">query7:</a> SELECT COUNT(DISTINCT fldDepartment) FROM tblCourses</li>
             <li><a href="q08.php">query8:</a> SELECT DISTINCT fldBuilding, COUNT(fldSection) FROM tblSections GROUP BY fldBuilding</li>
-            <li><a href="q09.php">query9:</a> SELECT DISTINCT fldBuilding, COUNT(DISTINCT fldNumStudents) FROM tblSections WHERE fldDays LIKE "%W%" GROUP BY fldBuilding ORDER BY fldNumStudents DESC</li>
-            <li><a href="q10.php">query10:</a> SELECT DISTINCT fldBuilding, COUNT(DISTINCT fldNumStudents) FROM tblSections WHERE fldDays LIKE "%F%" GROUP BY fldBuilding ORDER BY fldNumStudents DESC</li>
+            <li><a href="q09.php">query9:</a> SELECT DISTINCT fldBuilding, COUNT(DISTINCT fldNumStudents) FROM tblSections WHERE fldDays LIKE "%W%" GROUP BY fldBuilding ORDER BY count(DISTINCT fldNumStudents) DESC</li>
+            <li><a href="q10.php">query10:</a> SELECT DISTINCT fldBuilding, COUNT(DISTINCT fldNumStudents) FROM tblSections WHERE fldDays LIKE "%F%" GROUP BY fldBuilding ORDER BY count(DISTINCT fldNumStudents) DESC</li>
         </ol>
