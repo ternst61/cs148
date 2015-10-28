@@ -7,9 +7,10 @@
 include "top.php";
 
 //now print out each record
-    $columns = 11;
+    $columns = 12;
     $query = "SELECT DISTINCT tblStudents.fldFirstName, tblStudents.fldLastName, tblFourYearPlan.fldMajor, tblFourYearPlan.fldMinor,
-                tblAdvisors.fldAdvisorFirstName, tblAdvisors.fldAdvisorLastName, tblSemesterPlan.fnkYear, tblSemesterPlan.fnkTerm, tblCourses.fldCourseName, tblCourses.fldDepartment, tblCourses.fldCourseNumber
+                tblAdvisors.fldAdvisorFirstName, tblAdvisors.fldAdvisorLastName, tblSemesterPlan.fnkYear, tblSemesterPlan.fnkTerm,
+                tblCourses.fldCourseName, tblCourses.fldDepartment, tblCourses.fldCourseNumber, tblCourses.fldCredits
                 FROM tblCourses 
                 INNER JOIN tblSemesterPlanCourses ON tblCourses.pmkCourseId = tblSemesterPlanCourses.fnkCourseId 
                 INNER JOIN tblSemesterPlan ON tblSemesterPlanCourses.fnkTerm = tblSemesterPlan.fnkTerm AND tblSemesterPlanCourses.fnkYear = tblSemesterPlan.fnkYear 
