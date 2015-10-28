@@ -10,6 +10,8 @@
 //##############################################################################
 include "top.php";
 
+print '<h2><a href = "q01.php"> FOUR YEAR PLAN SAMPLE QUERY </a></h2>';
+
 $tableName = "";
 
 if (isset($_GET['getRecordsFor'])) {
