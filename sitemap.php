@@ -36,7 +36,15 @@
                     <li><a href="assignment2.0/q09.php">query9</a></li>
                     <li><a href="assignment2.0/q10.php">query10</a></li>
                 </ul>
-            </li>    
+            </li>  
+            <li><a href="assignment3.0/index.php">assignment3.0</a></li>
+            <li><a href="advising/index.php">ADVISING</a>   
+                <ul>    
+                    <li><a href ="erd.pdf">ER Diagram</a></li>
+                    <li><a href="schema.pdf">Schema</a></l>      
+                </ul>
+            </li>
+                
         </ol>
             
         

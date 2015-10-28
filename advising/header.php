@@ -1,7 +1,7 @@
 <!-- %%%%%%%%%%%%%%%%%%%%%%     Page header   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 <header>
-    <a href = "tables.php"> <figure class="float_left small">
+    <a href = "index.php"> <figure class="float_left small">
         <img alt="Welcome to UVM!" src="images/catamount.png"> 
         </figure> </a>
     <h1>UVM advising: 4 Year Plan</h1>
