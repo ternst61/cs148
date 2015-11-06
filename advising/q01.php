@@ -12,14 +12,14 @@ include "top.php";
                 tblAdvisors.fldAdvisorFirstName, tblAdvisors.fldAdvisorLastName, tblSemesterPlan.fnkYear, tblSemesterPlan.fnkTerm,
                 tblCourses.fldCourseName, tblCourses.fldDepartment, tblCourses.fldCourseNumber, tblCourses.fldCredits
                 FROM tblCourses 
-                INNER JOIN tblSemesterPlanCourses ON tblCourses.pmkCourseId = tblSemesterPlanCourses.fnkCourseId 
-                INNER JOIN tblSemesterPlan ON tblSemesterPlanCourses.fnkTerm = tblSemesterPlan.fnkTerm AND tblSemesterPlanCourses.fnkYear = tblSemesterPlan.fnkYear 
-                INNER JOIN tblFourYearPlan ON tblSemesterPlan.fnkPlanId = tblFourYearPlan.pmkPlanId
-                INNER JOIN tblStudents ON tblFourYearPlan.fnkStudentNetId = tblStudents.pmkNetId
-                INNER JOIN tblAdvisors ON tblFourYearPlan.fnkAdvisorNetId = tblAdvisors.pmkNetId
+                JOIN tblSemesterPlanCourses ON tblCourses.pmkCourseId = tblSemesterPlanCourses.fnkCourseId 
+                JOIN tblSemesterPlan ON tblSemesterPlanCourses.fnkTerm = tblSemesterPlan.fnkTerm AND tblSemesterPlanCourses.fnkYear = tblSemesterPlan.fnkYear AND tblSemesterPlanCourses.fnkPlanId = tblSemesterPlan.fnkPlanId
+                JOIN tblFourYearPlan ON tblSemesterPlan.fnkPlanId = tblFourYearPlan.pmkPlanId
+                JOIN tblStudents ON tblFourYearPlan.fnkStudentNetId = tblStudents.pmkNetId
+                JOIN tblAdvisors ON tblFourYearPlan.fnkAdvisorNetId = tblAdvisors.pmkNetId
                 ORDER BY tblSemesterPlanCourses.fldDisplayOrder";
     //$testquery = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
-    $info2 = $thisDatabaseReader->select($query, "", 0, 2, 0, 0, false, false);
+    $info2 = $thisDatabaseReader->select($query, "", 0, 3, 0, 0, false, false);
     
     print ' ' . count($info2) . ' records';
     
@@ -49,9 +49,23 @@ include "top.php";
         print '<th>' . $message . '</th>';
     }
     print '</tr>';
+    
+    
+    $lastTerm = "";
 
-    $highlight = 0; // used to highlight alternate rows
-    foreach ($info2 as $rec) {
+    $highlight = 0; // used 
+    //
+    //to highlight alternate rows
+    foreach ($info2 as $rec) {    
+        
+        $currentTerm = $rec["fnkYear"] . $rec["fnkTerm"];
+        
+        if ($currentTerm != $lastTerm) { 
+            print "<tr><td>Debugging</td></tr>";
+            
+            $lastTerm = $currentTerm;
+        }
+        
         $highlight++;
         if ($highlight % 2 != 0) {
             $style = ' odd ';

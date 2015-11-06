@@ -23,6 +23,9 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     $whiteListPages[] = "populate-table.php";
     $whiteListPages[] = "populate-enrolled.php";
     $whiteListPages[] = "q01.php";
+    $whiteListPages[] = "form.php";
+    $whiteListPages[] = "form2.php";
+  
   
     
 
@@ -110,6 +113,32 @@ function securityCheck($path_parts, $yourURL, $form = false) {
 
     }
     return $passed;
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//performs a few security checks
+function securityCheck1($form = false) {
+    
+    $status = true; // start off thinking everything is good until a test fails
+    
+  /* // when it is a form page check to make sure it submitted to itself
+    if ($form) {
+        // globals defined in top.php
+        global $yourURL;
+
+        $fromPage = htmlentities($_SERVER['HTTP_REFERER'], ENT_QUOTES, "UTF-8");
+
+        if ($debug)
+            print "<p>From: " . $fromPage . "https://ternst.w3.uvm.edu/cs148develop/cs148/" . $yourURL;
+
+        if ($fromPage != $yourURL) {
+            $status = false;
+        }
+    }
+   
+   */
+
+    return $status;
 }
 
 ?>
