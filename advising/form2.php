@@ -550,7 +550,7 @@ include ("top.php");
                                 <label for="txtCourse6" class="required">Course
                                     <input type="text" id="txtCourse6" name="txtCourse6"
                                            value="<?php print $course6; ?>"
-                                           tabindex="240" maxlength="5" placeholder="no course"
+                                           tabindex="320" maxlength="5" placeholder="no course"
                                            <?php if ($course6Error) print 'class="mistake"'; ?>
                                            onfocus="this.select()"
                                            autofocus>

@@ -39,7 +39,10 @@
             </li>  
             <li><a href="assignment3.0/index.php">assignment3.0</a></li>
             <li><a href="advising/index.php">ADVISING</a>   
-                <ul>    
+                <ul>   
+                    <li><a href="advising/q01.php">Sample Plan</a>   
+                    <li><a href="advising/form.php">Form</a>
+
                     <li><a href ="erd.pdf">ER Diagram</a></li>
                     <li><a href="schema.pdf">Schema</a></l>      
                 </ul>

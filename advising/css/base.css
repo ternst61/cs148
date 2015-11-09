@@ -107,3 +107,110 @@ nav ol li{
     padding: .25em;
 }
 
+
+/* -------------------------------------------------------------------------- */
+/* ===========================     FORM   =================================== */
+/* -------------------------------------------------------------------------- */
+
+/*
+#form article#main{
+    float: none;
+    margin: auto; // because of the fixed width this centers the form
+    text-align: center;
+    width: 600px; // not repsonive but fixed
+}
+
+//need to clear any floats that may exist 
+fieldset{
+    border: 1px solid #70b8f2;
+    width: 500px;
+    clear: both;  
+}
+// just pushes content to left side of the box. 
+fieldset.contact{
+    float: left;
+}
+// when you look at the labels this pushes then next to the input and right
+//aligns them. Display block means they are each on their own line. 
+fieldset.contact label{
+    display: block;
+    text-align: center; // pushes the text to the right where they line up 
+    float: right // the float left above pushes everything back to the left
+}
+
+fieldset.contact input{
+    width: 8em;
+    float: right;
+    margin-left: 10px;   // works with above to be the same size for the boxes 
+}
+
+fieldset.buttons{
+    border: none;
+    text-align: center;
+}
+
+fieldset.listbox label {
+    float: left;
+}
+
+#listAlbum {
+    margin-left: 7%;
+}
+fieldset.wrapper {
+    border: 0;
+    margin: auto;
+}
+
+fieldset label.comment {
+    float: left;
+    margin-left: 10%;
+}
+fieldset.wrapper legend {
+    color: #a28940;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+fieldset.wrapper > legend {
+    // i only want the first legend ie if it follows the class wrapper 
+    font-size: 1.5em;
+}
+
+// style the errors in the form so they are visible 
+.mistake {
+    color: #fff;
+    background-color:#800;
+    border: thin solid #000;
+}
+
+// style the list of errors that will show before the form 
+#errors ol li{
+    color: #ff5555;
+}
+
+#processed {
+    color: #a28940;
+    text-align: center;
+    margin-top: 2em;
+}
+*/
+/***********************************************************************/
+/*
+label {
+    color: #a28940;
+    display: block;
+    font-size: .9em;
+    text-align: center;
+} 
+
+a.forma {
+    font-size: 1em;
+}
+
+a.forma:hover {
+    text-decoration: underline;
+}
+
+*/

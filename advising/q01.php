@@ -61,7 +61,7 @@ include "top.php";
         $currentTerm = $rec["fnkYear"] . $rec["fnkTerm"];
         
         if ($currentTerm != $lastTerm) { 
-            print "<tr><td>Debugging</td></tr>";
+            print "<tr><td></td></tr>";
             
             $lastTerm = $currentTerm;
         }
