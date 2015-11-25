@@ -1,0 +1,216 @@
+/* 
+    Created on : Jun 10, 2015, 10:27:26 AM
+    Author     : Robert Erickson
+*/
+@import url('reset.css');
+/*------------------------   standard elements  ----------------------------- */
+body{
+    margin: 0 5% 0 5%;
+}
+article{
+    padding: 2em;
+}
+figcaption {
+    color: #839e99;
+    font-style: italic;
+    text-align: center;
+}
+
+header{
+    overflow: auto; /* forces header to fit to figure */
+}
+
+header .float_left{
+    margin-top: 0;
+}
+
+header h1{
+    padding-bottom: 2em;
+    padding-top: 75px;
+}
+
+img{
+    max-width: 100%; /* image strinks to fit containor but does not stretch */
+}
+
+section{
+    padding: 2em;
+    width: 40%;  
+}
+
+#foot {
+    padding-top: 8em;
+    
+}
+
+
+/*------------------------   classes           ------------------------------ */
+.float_left {
+    border: thin solid darkslategray;
+    float: left;
+    margin: 1em 1em 1em 0;
+    padding: 0.5em;
+}
+
+.even{
+    background-color: whitesmoke;
+}
+
+.odd{
+    background-color: lightcyan;
+}
+
+.small {
+    width: 150px;
+}
+
+/*------------------------   nav section only  ------------------------------ */
+nav ol li{
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 2em;
+}
+
+/*------------------------   table page  only  ------------------------------ */
+#table aside{
+    height: 600px; 
+    float: left; 
+    overflow: auto; 
+    margin-left: 2em;            
+}
+#table section{
+    width: 35%; 
+    height: 600px; 
+    float: left; 
+    overflow: auto;
+}
+/*#table*/ table{
+    border: 1.5px solid black;
+    border-collapse: collapse;
+    padding: .5em;
+}
+
+/*#table*/ tr{
+        border: 1px solid black;
+        padding: .25em;
+}
+
+/*#table */td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: .25em;
+}
+
+/*#table*/ th{
+    text-align: left;
+    border: 1px solid black;
+    padding: .25em;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* ===========================     FORM   =================================== */
+/* -------------------------------------------------------------------------- */
+
+/*
+#form article#main{
+    float: none;
+    margin: auto; // because of the fixed width this centers the form
+    text-align: center;
+    width: 600px; // not repsonive but fixed
+}
+
+//need to clear any floats that may exist 
+fieldset{
+    border: 1px solid #70b8f2;
+    width: 500px;
+    clear: both;  
+}
+// just pushes content to left side of the box. 
+fieldset.contact{
+    float: left;
+}
+// when you look at the labels this pushes then next to the input and right
+//aligns them. Display block means they are each on their own line. 
+fieldset.contact label{
+    display: block;
+    text-align: center; // pushes the text to the right where they line up 
+    float: right // the float left above pushes everything back to the left
+}
+
+fieldset.contact input{
+    width: 8em;
+    float: right;
+    margin-left: 10px;   // works with above to be the same size for the boxes 
+}
+
+fieldset.buttons{
+    border: none;
+    text-align: center;
+}
+
+fieldset.listbox label {
+    float: left;
+}
+
+#listAlbum {
+    margin-left: 7%;
+}
+fieldset.wrapper {
+    border: 0;
+    margin: auto;
+}
+
+fieldset label.comment {
+    float: left;
+    margin-left: 10%;
+}
+fieldset.wrapper legend {
+    color: #a28940;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+fieldset.wrapper > legend {
+    // i only want the first legend ie if it follows the class wrapper 
+    font-size: 1.5em;
+}
+
+// style the errors in the form so they are visible 
+.mistake {
+    color: #fff;
+    background-color:#800;
+    border: thin solid #000;
+}
+
+// style the list of errors that will show before the form 
+#errors ol li{
+    color: #ff5555;
+}
+
+#processed {
+    color: #a28940;
+    text-align: center;
+    margin-top: 2em;
+}
+*/
+/***********************************************************************/
+/*
+label {
+    color: #a28940;
+    display: block;
+    font-size: .9em;
+    text-align: center;
+} 
+
+a.forma {
+    font-size: 1em;
+}
+
+a.forma:hover {
+    text-decoration: underline;
+}
+
+*/
