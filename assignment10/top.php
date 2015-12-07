@@ -5,11 +5,11 @@ require_once('lib/custom-functions.php');
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>UVM Course Database</title>
+        <title>CS148 Final Project</title>
         <meta charset="utf-8">
         <meta name="author" content="Thomas H Ernst">
-        <meta name="description" content="A sample database for cs148, populated
-              with classes offered at UVM and the students in those classes.">
+        <meta name="description" content="Final Project for CS148 - A website
+              showing data for Ernst family genealogy">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -122,7 +122,35 @@ require_once('lib/custom-functions.php');
         $dbUserName = get_current_user() . '_admin';
         $whichPass = "a";
         $thisDatabaseAdmin = new Database($dbUserName, $whichPass, $dbName);
+
         ?>	
+        
+        <?php
+        
+         $domain = "http://";
+if (isset($_SERVER['HTTPS'])) {
+    if ($_SERVER['HTTPS']) {
+        $domain = "https://";
+    }
+}
+
+$server = htmlentities($_SERVER['SERVER_NAME'], ENT_QUOTES, "UTF-8");
+
+$domain .= $server;
+
+$phpSelf = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, "UTF-8");
+
+$path_parts = pathinfo($phpSelf);
+        
+                    
+        //require_once('security.php');
+
+        if ($path_parts['filename'] == "form") {
+            include "validation-functions.php";
+            include "mail-message.php";
+        }
+        
+        ?>
 
     </head>
 

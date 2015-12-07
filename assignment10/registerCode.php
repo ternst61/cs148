@@ -59,7 +59,7 @@ $yourURL = $domain . $phpSelf;
 //
 // Initialize variables one for each form element
 // in the order they appear on the form
-$email = "youremail@uvm.edu";
+$userEmail = "";
 
 //%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
@@ -102,7 +102,7 @@ if (isset($_POST["btnSubmit"])) {
 // SECTION: 2b Sanitize (clean) data
 // remove any potential JavaScript or html code from users input on the
 // form. Note it is best to follow the same order as declared in section 1c.
-    $email = filter_var($_POST["txtEmail"], FILTER_SANITIZE_EMAIL);
+    $userEmail = filter_var($_POST["txtEmail"], FILTER_SANITIZE_EMAIL);
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //
@@ -116,10 +116,10 @@ if (isset($_POST["btnSubmit"])) {
 // see section 3b. The error flag ($emailERROR) will be used in section 3c.
 
 
-    if ($email == "") {
+    if ($userEmail == "") {
         $errorMsg[] = "Please enter your email address";
         $emailERROR = true;
-    } elseif (!verifyEmail($email)) {
+    } elseif (!verifyEmail($userEmail)) {
         $errorMsg[] = "Your email address appears to be incorrect.";
         $emailERROR = true;
     }
@@ -144,7 +144,7 @@ if (isset($_POST["btnSubmit"])) {
         try {
             $thisDatabase->db->beginTransaction();
             $query = 'INSERT INTO tblRegister SET fldEmail = ?';
-            $data = array($email);
+            $data = array($userEmail);
             if ($debug) {
                 print "<p>sql " . $query;
                 print"<p><pre>";
@@ -201,13 +201,13 @@ if (isset($_POST["btnSubmit"])) {
             $messageB .= "<p>or copy and paste this url into a web browser: ";
             $messageB .= $domain . $path_parts["dirname"] . '/confirmation.php?q=' . $key1 . '&amp;w=' . $key2 . "</p>";
 
-            $messageC .= "<p><b>Email Address:</b><i>   " . $email . "</i></p>";
+            $messageC .= "<p><b>Email Address:</b><i>   " . $userEmail . "</i></p>";
 
             //##############################################################
             //
             // email the form's information
             //
-            $to = $email; // the person who filled out the form
+            $to = $userEmail; // the person who filled out the form
             $cc = "";
             $bcc = "";
             $from = "WRONG site <noreply@yoursite.com>";
@@ -244,7 +244,7 @@ if (isset($_POST["btnSubmit"])) {
             print "not ";
         }
         print "been sent</p>";
-        print "<p>To: " . $email . "</p>";
+        print "<p>To: " . $userEmail . "</p>";
         print "<p>Mail Message:</p>";
         print $messageA . $messageC;
     } else {
@@ -282,16 +282,16 @@ if (isset($_POST["btnSubmit"])) {
               method="post"
               id="frmRegister">
             <fieldset class="wrapper">
-                <legend>Register Today</legend>
-                <p>You will find Peace ...</p>
+                <legend>Register to add a family member</legend>
+                
                 <fieldset class="wrapperTwo">
-                    <legend>Please complete the following form</legend>
+                    
                     <fieldset class="contact">
                         <legend>Contact Information</legend>
 
                         <label for="txtEmail" class="required">Email
                             <input type="text" id="txtEmail" name="txtEmail"
-                                   value="<?php print $email; ?>"
+                                   value="<?php print $userEmail; ?>"
                                    tabindex="120" maxlength="45" placeholder="Enter a valid email address"
                                    <?php if ($emailERROR) print 'class="mistake"'; ?>
                                    onfocus="this.select()"
