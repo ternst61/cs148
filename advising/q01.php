@@ -51,6 +51,8 @@ include "top.php";
     print '</tr>';
     
     
+    
+    
     $lastTerm = "";
 
     $highlight = 0; // used 

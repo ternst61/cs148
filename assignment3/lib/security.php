@@ -20,18 +20,21 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     $whiteListPages = array();
     $whiteListPages[] = "tables.php";
     $whiteListPages[] = "index.php";
-    $whiteListPages[] = "top.php";
     $whiteListPages[] = "populate-table.php";
     $whiteListPages[] = "populate-enrolled.php";
     $whiteListPages[] = "q01.php";
-    $whiteListPages[] = "form.php";
-    $whiteListPages[] = "registerCode.php";
-    $whiteListPages[] = "confirmationCode.php";
-    $whiteListPages[] = "nav.php";
-    $whiteListPages[] = "history.php";
-    $whiteListPages[] = "familyTree.php";
-  
-  
+    $whiteListPages[] = "q02.php";
+    $whiteListPages[] = "q03.php";
+    $whiteListPages[] = "q04.php";
+    $whiteListPages[] = "q05.php";
+    $whiteListPages[] = "q06.php";
+    $whiteListPages[] = "q07.php";
+    $whiteListPages[] = "q08.php";
+    $whiteListPages[] = "q09.php";
+    $whiteListPages[] = "q10.php";
+    $whiteListPages[] = "q11.php";
+    $whiteListPages[] = "q12.php";
+    
     
 
     
@@ -44,23 +47,11 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     $whiteListFolders[] = "/develop/cs148/assignment1.0";
     $whiteListFolders[] = "/cs148develop/cs148";
     $whiteListFolders[] = "/cs148develop/cs148/assignment1.0";
-    
     $whiteListFolders[] = "/cs148/assignment2.0";
     $whiteListFolders[] = "/cs148/assignment2.0/q01";
+
     $whiteListFolders[] = "/cs148develop/cs148/assignment2.0";
-    
-    $whiteListFolders[] = "/cs148develop/cs148/assignment3.0";
-    $whiteListFolders[] = "/cs148/assignment3.0";
-
-    $whiteListFolders[] = "/cs148develop/cs148/advising";
-    $whiteListFolders[] = "/cs148/advising";   
-    
-    $whiteListFolders[] = "/cs148develop/cs148/assignment10";
-    $whiteListFolders[] = "/cs148/assignment10";  
-    
-    $whiteListFolders[] = "/CS148_FINAL";
-    
-
+    $whiteListFolders[] = "/cs148develop/cs148/assignment2.0";
 
 
     // Check for valid page name
@@ -123,32 +114,6 @@ function securityCheck($path_parts, $yourURL, $form = false) {
 
     }
     return $passed;
-}
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//performs a few security checks
-function securityCheck1($form = false) {
-    
-    $status = true; // start off thinking everything is good until a test fails
-    
-  /* // when it is a form page check to make sure it submitted to itself
-    if ($form) {
-        // globals defined in top.php
-        global $yourURL;
-
-        $fromPage = htmlentities($_SERVER['HTTP_REFERER'], ENT_QUOTES, "UTF-8");
-
-        if ($debug)
-            print "<p>From: " . $fromPage . "https://ternst.w3.uvm.edu/cs148develop/cs148/" . $yourURL;
-
-        if ($fromPage != $yourURL) {
-            $status = false;
-        }
-    }
-   
-   */
-
-    return $status;
 }
 
 ?>

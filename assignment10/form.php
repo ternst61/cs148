@@ -43,12 +43,11 @@ include ("top.php");
     
     $testquery = $thisDatabaseReader->testquery($query, "",1,0,2,0,false,false);
     
-    
 
     $fldFirstName = "";
     $fldMiddleName = NULL;
     $fldLastName = "";
-    $fldGender = "male";        //ADD GENDER CHECKBOX
+    $fldGender = "M";        //ADD GENDER RADIO
     $fldFather = "";            //ADD FATHER DROP DOWN 
     $fldDateOfBirth = NULL;  
     $fldCityOfBirth = NULL;
@@ -59,7 +58,32 @@ include ("top.php");
     $fldStateOfDeath = NULL;
     $fldCountryOfDeath = NULL;
     $userEmail = "";
+    $music = false;            
+    $sports = false;
+    $politics = false; 
     
+    
+    if ($_GET['id']){
+        $id = $_GET['id'];
+        
+        $query2 = 'select * from tblPeople where pmkPersonId=' . $id;
+        
+        $info = $thisDatabaseReader->select($query2, "",1,0,0,0,false,false);
+        
+        $fldFirstName = $info[0];
+        $fldMiddleName = $info[1];
+        $fldLastName = $info[2];
+        $fldGender = $info[3];        //ADD GENDER RADIO
+        $fldDateOfBirth = $info[4];  
+        $fldCityOfBirth = $info[5];
+        $fldStateOfBirth = $info[6];
+        $fldCountryOfBirth = $info[7];
+        $fldDateOfDeath = $info[8];
+        $fldCityOfDeath = $info[9];
+        $fldStateOfDeath = $info[10];
+        $fldCountryOfDeath = $info[11];
+
+    }
     
 //
 //
@@ -80,6 +104,7 @@ include ("top.php");
     $fldCityOfDeathError = false;
     $fldStateOfDeathError = false;
     $fldCountryOfDeathError = false;
+    
 
 
 //%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
@@ -276,10 +301,13 @@ include ("top.php");
              *   who the father/husband is
              * 
              */
-            
+            $querystart = "INSERT INTO";
+            if($_GET['id']){
+                $querystart = "UPDATE";
+            }
              
             
-            $query1 = 'INSERT INTO `tblPeople`(`fldFirstName`, `fldMiddleName`, `fldLastName`, `fldGender`, `fldDateOfBirth`, `fldCityOfBirth`, `fldStateOfBirth`, `fldCountryOfBirth`, `fldDateOfDeath`, `fldCityOfDeath`, `fldStateOfDeath`, `fldCountryOfDeath`, `pmkPersonId`) '
+            $query1 = $querystart . ' `tblPeople`(`fldFirstName`, `fldMiddleName`, `fldLastName`, `fldGender`, `fldDateOfBirth`, `fldCityOfBirth`, `fldStateOfBirth`, `fldCountryOfBirth`, `fldDateOfDeath`, `fldCityOfDeath`, `fldStateOfDeath`, `fldCountryOfDeath`, `pmkPersonId`) '
                     . 'VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)';
             
             $query2 = 'INSERT INTO `tblRelationshipType`(`fldRelationshipType`) VALUES (?)';
@@ -290,12 +318,14 @@ include ("top.php");
 
             $info1 = $thisDatabaseWriter->insert($query1, "", 0, 0, 0, 0, false, false);
             
-            $info2 = $thisDatabaseWriter->insert($query2, "", 0, 0, 0, 0, false, false);
+            if(!$_GET['id']){
             
-            $info3 = $thisDatabaseWriter->insert($query3, "", 0, 0, 0, 0, false, false);
-            
-            $info4 = $thisDatabaseWriter->insert($query4, "", 0, 0, 0, 0, false, false);
-            
+                $info2 = $thisDatabaseWriter->insert($query2, "", 0, 0, 0, 0, false, false);
+
+                $info3 = $thisDatabaseWriter->insert($query3, "", 0, 0, 0, 0, false, false);
+
+                $info4 = $thisDatabaseWriter->insert($query4, "", 0, 0, 0, 0, false, false);
+            }
             
 
             //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -475,8 +505,16 @@ include ("top.php");
                                               value="Female"
                                               <?php if ($fldGender == "Female") print 'checked' ?>
                                               tabindex="122">Female</label>
+                                <label><input type="radio" 
+                                              id="radGenderOther" 
+                                              name="radGender" 
+                                              value="Other"
+                                              <?php if ($fldGender == "Other") print 'checked' ?>
+                                              tabindex="123">Other</label>
 
                             </fieldset>
+                                
+                                
                                 
                                 <fieldset  class="listbox">	
                                     <label for ="listFather" > Father or Husband </label>
@@ -570,7 +608,30 @@ include ("top.php");
                                 </label>  
                             </fieldset>
                             
-                                       
+                            <fieldset>
+                                <label>Interests</label>
+                            <label><input type="checkbox" 
+                                              id="" 
+                                              name="chkMusic" 
+                                              value="music"
+                                              <?php if ($music) print ' checked '; ?>
+                                              tabindex="440"> Music </label>
+
+                                <label><input type="checkbox" 
+                                              id="" 
+                                              name="chkSports" 
+                                              value="sports"
+                                              <?php if ($sports) print ' checked '; ?>
+                                              tabindex="440"> Sports </label>
+
+                                <label><input type="checkbox" 
+                                              id="" 
+                                              name="chkPolitics" 
+                                              value="politics"
+                                              <?php if ($politics) print ' checked '; ?>
+                                              tabindex="440"> Politics </label>
+                            
+                            </fieldset>           
 
                         </fieldset> <!-- ends contact -->
 

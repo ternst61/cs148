@@ -38,7 +38,7 @@ include "top.php";
 //
 // SECTION: 1a.
 // variables for the classroom purposes to help find errors.
-$debug = false;
+$debug = true;
 if (isset($_GET["debug"])) { // ONLY do this in a classroom environment
     $debug = true;
 }
@@ -91,11 +91,11 @@ if (isset($_POST["btnSubmit"])) {
 //
 // SECTION: 2a Security
 //
-    if (!securityCheck(true)) {
-        $msg = "<p>Sorry you cannot access this page. ";
-        $msg.= "Security breach detected and reported</p>";
-        die($msg);
-    }
+//    if (!securityCheck(true)) {
+//        $msg = "<p>Sorry you cannot access this page. ";
+//        $msg.= "Security breach detected and reported</p>";
+//        die($msg);
+//    }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //
@@ -119,10 +119,12 @@ if (isset($_POST["btnSubmit"])) {
     if ($userEmail == "") {
         $errorMsg[] = "Please enter your email address";
         $emailERROR = true;
-    } elseif (!verifyEmail($userEmail)) {
-        $errorMsg[] = "Your email address appears to be incorrect.";
-        $emailERROR = true;
-    }
+    } 
+    
+    //elseif (!verifyEmail($userEmail)) {
+    //    $errorMsg[] = "Your email address appears to be incorrect.";
+    //    $emailERROR = true;
+   // }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //

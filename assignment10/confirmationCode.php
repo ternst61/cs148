@@ -25,7 +25,7 @@ print '<h1>Registration Confirmation</h1>';
 //
 // SECTION: 1a.
 // variables for the classroom purposes to help find errors.
-$debug = false;
+$debug = true;
 if (isset($_GET["debug"])) { // ONLY do this in a classroom environment
     $debug = true;
 }
@@ -33,8 +33,8 @@ if ($debug)
     print "<p>DEBUG MODE IS ON</p>";
 //%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 
-$adminEmail = "rerickso@uvm.edu";
-$message = "<p>I am sorry but this project cannot be confrimed at this time. Please call (802) 656-1234 for help in resolving this matter.</p>";
+$adminEmail = "ternst@uvm.edu";
+$message = "<p>Sorry there was an error.</p>";
 
 
 //##############################################################

@@ -27,6 +27,7 @@ print '<section id="tables2" class="float_left">';
 print '<table>';
 
 $query = 'SHOW TABLES';
+
 $results = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
 
 // loop through all the tables in the database, display fields and properties
