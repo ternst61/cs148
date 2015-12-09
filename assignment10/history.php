@@ -16,6 +16,8 @@ include ("top.php");
         diary. 
     </p>
     
+    <img src='ernst_crest.png' alt='Ernst Family Crest'>
+    
     
     
 <?php

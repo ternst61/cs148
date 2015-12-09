@@ -12,7 +12,7 @@ include "top.php";
 
 <a href="https://ternst.w3.uvm.edu/CS148_FINAL/index.php">FINAL PROJECT</a>
 
-<a href='../CS148Final_specs.docx'>project specs</a>
+<a href='../specs.pdf'>project specs</a>
 
 
 
